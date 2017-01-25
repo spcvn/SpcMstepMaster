@@ -193,11 +193,35 @@ class EmailConfig{
 	);
 }
 
+# define sidebar menu
+$sidebar_main_menu=[
+	[
+		'caption'=>'Dashboard',
+		'url'=>'/'
+	],
+	[
+		'caption'=>'Client',
+		'url'=>['controller'=>'Client','action'=>'index'],
+		'sub_menu'=>[
+			[
+				'caption'=>'Client list',
+				'url'=>['controller'=>'Client','action'=>'index']
+			],
+			[
+				'caption'=>'Add new client',
+				'url'=>['/client/add_new']
+			]
+		]
+	]
+];
+
+define('SIDEBAR_MAIN_MENU', $sidebar_main_menu);
+
 # Locale Configuration
 define('LANGUAGE_DEFAULT', 'jpn');
 
 # libs にパスを通す
-$path = APP."LIB";
+$path = APP."Lib";
 set_include_path(get_include_path().PATH_SEPARATOR.$path);
 
 ?>
